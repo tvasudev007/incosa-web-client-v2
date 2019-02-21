@@ -1,0 +1,4 @@
+https://stackoverflow.com/questions/18586921/how-to-launch-html-using-chrome-at-allow-file-access-from-files-mode
+python -m SimpleHTTPServer
+
+8451887929

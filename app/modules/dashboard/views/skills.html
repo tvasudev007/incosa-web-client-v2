@@ -1,0 +1,77 @@
+﻿<!-- Content Header (Page header) -->
+<section class="content-header">
+    <h1>Alerts</h1>
+    <ol class="breadcrumb">
+        <li><a><i class="fa fa-dashboard"></i> Dashboard</a></li>
+        <li class="active">Alerts</li>
+    </ol>
+</section>
+<section class="content">
+    <div class="row">        
+        <div class="col-lg-6">
+            <div class="charts-single-pro dark-shaded-box shadow-reset nt-mg-b-30">
+                <div class="info-box-header">
+                    <div class="info-box-text">
+                        <h4>Recent Alerts</h4>
+                        <div class="form-group">
+                            <md-input-container class="md-icon-float md-block">
+                                <label>Search for Recent Alerts</label>                                   
+                                <input type="text" name="name" data-ng-model="queryText">
+                            </md-input-container>
+                        </div>
+                        <table ng-table="vm.tableParams" class="table">
+                            <tr ng-repeat="user in $data | filter: queryText">
+                                <td title="'Software'">{{user.Software}}</td>
+                                <td title="'Percentage'">{{user.Percentage}}</td>
+                                <td title="'theme'">{{user.theme}}</td>
+                                <td title="'image'">{{user.image}}</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>                    
+            </div>            
+        </div>
+
+        <div class="col-lg-6">
+            <div class="charts-single-pro dark-shaded-box shadow-reset nt-mg-b-30">
+                <div class="info-box-header">
+                    <div class="info-box-text">
+                        <h4>Basic Bar Chart</h4>
+                        <div id="BarChart" style="min-width: 110px; height: 400px; margin: 0 auto"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="charts-single-pro dark-shaded-box shadow-reset nt-mg-b-30">
+                <div class="info-box-header">
+                    <div class="info-box-text">
+                        <h4>All Alerts</h4>                        
+                        <div class="form-group">
+                                <label class="sr-only">Search:</label>
+                                <md-input-container class="md-icon-float md-block">
+                                    <label>Search for Alerts</label>                                   
+                                    <input type="text" name="name" data-ng-model="recentAlertText">
+                                </md-input-container>
+                        </div>
+                        <table class="table">
+                            <thead>
+                              <tr>
+                                <th>Tag Name</th>
+                                <th>Value</th>
+                                <th>Last Updated</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr  data-ng-repeat="skill in vm.skills.development | filter: recentAlertText">
+                                <td>{{skill.Percentage}}</td>
+                                <td>{{skill.Software}}</td>
+                                <td>john@example.com</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                    </div>
+                </div>                    
+            </div>
+        </div>            
+    </div>
+</section>
